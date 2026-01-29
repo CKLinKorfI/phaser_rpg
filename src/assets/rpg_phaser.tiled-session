@@ -1,0 +1,26 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 4
+        },
+        "durotar.json#tile_set": {
+            "scaleInEditor": 1
+        }
+    },
+    "last.imagePath": "C:/Users/mixail/phas/phaser_rpg/phaser_rpg_project/src/assets",
+    "map.lastUsedFormat": "json",
+    "openFiles": [
+    ],
+    "project": "rpg_phaser.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.embedInMap": true,
+    "tileset.spacing": 1
+}
