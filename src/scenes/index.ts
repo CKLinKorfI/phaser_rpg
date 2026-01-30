@@ -1,3 +1,3 @@
-import { Durotar } from "./durotar";
+import { ElwynnForest } from "./elwynn_forest";
 
-export const scenes = [Durotar]
+export const scenes = [ElwynnForest]

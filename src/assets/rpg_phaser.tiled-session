@@ -8,10 +8,32 @@
     ],
     "fileStates": {
         "": {
-            "scaleInDock": 4
+            "scaleInDock": 1
+        },
+        "durotar.json": {
+            "scale": 0.9747395833333333,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 479.61528185947105,
+                "y": 320.08549292011753
+            }
         },
         "durotar.json#tile_set": {
             "scaleInEditor": 1
+        },
+        "durotar.json#tile_set_durotar": {
+            "scaleInDock": 1
+        },
+        "elwynn.json": {
+            "scale": 0.75,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 518,
+                "y": 397.33333333333337
+            }
+        },
+        "elwynn.json#tile_set_durotar": {
+            "scaleInDock": 1
         }
     },
     "last.imagePath": "C:/Users/mixail/phas/phaser_rpg/phaser_rpg_project/src/assets",

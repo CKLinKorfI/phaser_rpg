@@ -1,9 +1,13 @@
 export const TILES = {
-    DUROTAR: 'durotar'
+    DUROTAR: 'durotar',
+    ELWYNN: 'elwynn'
 }
 
 export const SIZES = {
-    TILE: 32,
+    TILE: {
+        WIDTH: 32,
+        HEIGHT: 32
+    },
     PLAYER: {
         WIDTH: 48,
         HEIGHT: 48
