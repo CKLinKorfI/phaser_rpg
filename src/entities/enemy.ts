@@ -1,5 +1,6 @@
-import { RIGHT } from "phaser";
+import { Game } from "phaser";
 import { Entity } from "./entity";
+import type { ElwynnForest } from "../scenes/elwynn_forest";
 
 export class Enemy extends Entity {
     private player?: Entity;
@@ -68,6 +69,36 @@ export class Enemy extends Entity {
         })
     }
 
+    attack (target: Entity) {
+        const time = Math.floor(this.scene.game.loop.time);
+
+        if(time % 2000 <= 3) {
+            target.takeDamage(10);
+        }
+    }
+
+    takeDamage (damage: number) {
+        super.takeDamage(damage);
+
+        if(this.health <= 0) {
+            this.diactivate()
+        }
+    }
+    
+    diactivate() {
+        const thisScene = this.scene as ElwynnForest; 
+
+        this.stopCycleTween();
+        this.setPosition(this.initPosition.x, this.initPosition.y);
+        this.setVisible(false);
+
+        this.isAlive = false;
+
+        this.destroy();
+
+        thisScene.killsCounter += 1;
+    }
+
     update(...args: any[]): void {
         // Расчет дистанции до персонажа
         const player = this.player!;
@@ -85,7 +116,7 @@ export class Enemy extends Entity {
             this.followToPlayer(player);
             if(distanceToPlayer < this.attackRange) {
                 this.setVelocity(0, 0);
-                // Атака
+                this.attack(player);
             }
             if(distanceToPosition > this.followRange) {
                 this.isFollowing = false;
