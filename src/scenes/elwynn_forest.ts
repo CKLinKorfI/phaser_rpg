@@ -1,9 +1,11 @@
 import elwynnForestJSON from '../assets/elwynn.json';
+import { Enemy } from '../entities/enemy.ts';
 import { Player } from '../entities/player.ts';
-import {LAYERS, SIZES, SPEITES, TILES} from '../utils/constants.ts';
+import {LAYERS, SIZES, SPRITES, TILES} from '../utils/constants.ts';
 
 export class ElwynnForest extends Phaser.Scene {
     private player?: Player;
+    private boar?: Enemy;
 
     constructor () {
         super('ElwynnForestScene');
@@ -12,10 +14,15 @@ export class ElwynnForest extends Phaser.Scene {
     preload(){
         this.load.image(TILES.ELWYNN, 'src/assets/summer_tiles.png');
         this.load.tilemapTiledJSON('map', 'src/assets/elwynn.json');
-        this.load.spritesheet(SPEITES.PLAYER,'src/assets/characters/alliance.png', {
+        this.load.spritesheet(SPRITES.PLAYER,'src/assets/characters/alliance.png', {
             frameWidth: SIZES.PLAYER.WIDTH,
             frameHeight: SIZES.PLAYER.HEIGHT
         } );
+
+        this.load.spritesheet(SPRITES.BOAR.BASE, 'src/assets/characters/boar.png', {
+            frameWidth: SIZES.BOAR.WIDTH,
+            frameHeight: SIZES.BOAR.HEIGHT
+        });
     }
 
     create() {
@@ -25,7 +32,9 @@ export class ElwynnForest extends Phaser.Scene {
         const groundLayer = map.createLayer(LAYERS.GROUND, tileSet, 0, 0);
         const wallsLayer = map.createLayer(LAYERS.WALLS, tileSet, 0, 0);
 
-        this.player = new Player(this, 400, 250, SPEITES.PLAYER);
+        this.player = new Player(this, 400, 250, SPRITES.PLAYER);
+        this.boar = new Enemy(this, 600, 400, SPRITES.BOAR.BASE);
+        this.boar.setPlayer(this.player);
 
         this.cameras.main.startFollow(this.player);
         this.cameras.main.setBounds(0, 0, map.widthInPixels, map.heightInPixels);
@@ -40,5 +49,6 @@ export class ElwynnForest extends Phaser.Scene {
 
     update(time: number, delta: number): void {
         this.player?.update(delta);
+        this.boar?.update();
     }
 }

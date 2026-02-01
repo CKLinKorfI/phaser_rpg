@@ -1,3 +1,5 @@
+import { Enemy } from "../entities/enemy"
+
 export const TILES = {
     DUROTAR: 'durotar',
     ELWYNN: 'elwynn'
@@ -11,6 +13,10 @@ export const SIZES = {
     PLAYER: {
         WIDTH: 48,
         HEIGHT: 48
+    },
+    BOAR : {
+        WIDTH: 32,
+        HEIGHT: 32
     }
 }
 
@@ -19,6 +25,9 @@ export const LAYERS = {
     WALLS: 'walls'
 }
 
-export const SPEITES = {
-    PLAYER: 'Player'
+export const SPRITES = {
+    PLAYER: 'Player',
+    BOAR: {
+        BASE: 'Boar',
+    }
 }

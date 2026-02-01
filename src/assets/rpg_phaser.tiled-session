@@ -3,8 +3,9 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "elwynn.json",
     "expandedProjectPaths": [
+        "."
     ],
     "fileStates": {
         "": {
@@ -25,12 +26,15 @@
             "scaleInDock": 1
         },
         "elwynn.json": {
-            "scale": 0.75,
-            "selectedLayer": 0,
+            "scale": 0.5,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 518,
-                "y": 397.33333333333337
+                "x": 1223,
+                "y": 512
             }
+        },
+        "elwynn.json#summerTileSet": {
+            "scaleInDock": 1
         },
         "elwynn.json#tile_set_durotar": {
             "scaleInDock": 1
@@ -39,9 +43,13 @@
     "last.imagePath": "C:/Users/mixail/phas/phaser_rpg/phaser_rpg_project/src/assets",
     "map.lastUsedFormat": "json",
     "openFiles": [
+        "elwynn.json",
+        "durotar.json"
     ],
     "project": "rpg_phaser.tiled-project",
     "recentFiles": [
+        "durotar.json",
+        "elwynn.json"
     ],
     "tileset.embedInMap": true,
     "tileset.spacing": 1

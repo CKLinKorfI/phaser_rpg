@@ -1,4 +1,4 @@
-import { SPEITES } from "../utils/constants";
+import { SPRITES } from "../utils/constants";
 import { Entity } from "./entity"
 
 export class Player extends Entity {
@@ -6,7 +6,7 @@ export class Player extends Entity {
     private moveSpeed: number;
 
     constructor( scene: Phaser.Scene, x: number, y: number, texture: string) {
-        super(scene, x, y, texture, SPEITES.PLAYER);
+        super(scene, x, y, texture, SPRITES.PLAYER);
 
         const anims = this.scene.anims;
         const animsFrameRate = 9;
